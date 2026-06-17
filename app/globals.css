@@ -35,3 +35,7 @@ body {
     transform: translateY(-12px);
   }
 }
+
+html {
+  scroll-behavior: smooth;
+}

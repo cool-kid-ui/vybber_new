@@ -6,7 +6,10 @@ import FooterLinks from "./footer-links";
 
 export default function Waitlist() {
   return (
-    <section className="px-6 py-32">
+   <section
+  id="waitlist"
+  className="scroll-mt-32 px-6 py-32"
+>
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-10 lg:grid-cols-[1.4fr_0.8fr]">
           {/* Waitlist Panel */}

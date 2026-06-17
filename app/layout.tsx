@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Navbar from "@/components/navbar";
+import GlobalFooter from "@/components/global-footer";
 
 export const metadata: Metadata = {
   title: "VYBBER",
@@ -14,7 +16,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <Navbar />
+        {children}
+        <GlobalFooter />
+      </body>
     </html>
   );
 }

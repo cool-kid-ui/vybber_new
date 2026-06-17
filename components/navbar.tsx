@@ -46,9 +46,12 @@ export default function Navbar() {
           </div>
 
           {/* Desktop CTA */}
-          <button className="hidden rounded-full border border-white/10 bg-white/10 px-4 py-2 text-sm font-medium text-white transition hover:bg-white/15 md:block">
-            Join Waitlist
-          </button>
+          <a
+  href="#waitlist"
+  className="hidden rounded-full border border-white/10 bg-white/10 px-4 py-2 text-sm font-medium text-white transition hover:bg-white/15 md:inline-block"
+>
+  Join Waitlist
+           </a>
 
           {/* Mobile Menu Button */}
           <button
@@ -88,12 +91,13 @@ export default function Navbar() {
                 Manifesto
               </Link>
 
-              <button
-                onClick={closeMenu}
-                className="mt-2 rounded-2xl border border-white/10 bg-white/10 px-4 py-3 text-left text-sm font-medium text-white transition hover:bg-white/15"
-              >
-                Reserve my spot →
-              </button>
+              <a
+  href="#waitlist"
+  onClick={closeMenu}
+  className="mt-2 block rounded-2xl border border-white/10 bg-white/10 px-4 py-3 text-left text-sm font-medium text-white transition hover:bg-white/15"
+>
+  Reserve my spot →
+              </a>
             </div>
           </div>
         )}

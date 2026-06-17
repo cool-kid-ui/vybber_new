@@ -58,9 +58,12 @@ export default function Hero() {
         All in one truth-powered swipe feed.
       </p>
 
-      <button className="mt-10 rounded-full border border-white/10 bg-white px-6 py-3 text-sm font-semibold text-black transition hover:scale-105">
-        Reserve my spot
-      </button>
+      <a
+  href="#waitlist"
+  className="mt-10 inline-block rounded-full border border-white/10 bg-white px-6 py-3 text-sm font-semibold text-black transition hover:scale-105"
+>
+  Reserve my spot
+    </a>
 
       {/* Phone Mockup */}
       <div className="mt-16 animate-[float_6s_ease-in-out_infinite]">

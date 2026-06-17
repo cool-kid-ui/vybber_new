@@ -1,5 +1,5 @@
 "use client";
-
+import { joinWaitlist } from "@/lib/waitlist";
 import { useState } from "react";
 import { motion } from "framer-motion";
 
@@ -10,29 +10,49 @@ export default function WaitlistForm() {
   const [username, setUsername] = useState("");
   const [role, setRole] = useState("");
 
-  // We'll connect Firebase later
+  
   const [status, setStatus] = useState<
     "idle" | "loading" | "success"
   >("idle");
 
   async function handleSubmit(
-    e: React.FormEvent<HTMLFormElement>
-  ) {
-    e.preventDefault();
+  e: React.FormEvent<HTMLFormElement>
+) {
+  e.preventDefault();
 
-    if (!email) return;
+  if (!email) return;
 
+  try {
     setStatus("loading");
 
-    // Temporary fake delay.
-    // We'll replace this with Firebase.
-    await new Promise((resolve) =>
-      setTimeout(resolve, 1500)
-    );
+    await joinWaitlist({
+      email,
+      username,
+      role,
+    });
 
     setStatus("success");
-  }
+  } catch (error) {
+    if (
+      error instanceof Error &&
+      error.message === "EMAIL_EXISTS"
+    ) {
+      alert(
+        "This email is already on the waitlist."
+      );
+      setStatus("idle");
+      return;
+    }
 
+    console.error(error);
+
+    alert(
+      "Something went wrong. Please try again."
+    );
+
+    setStatus("idle");
+  }
+}
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
       {/* Email */}

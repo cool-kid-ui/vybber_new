@@ -4,9 +4,9 @@ import Navbar from "@/components/navbar";
 import GlobalFooter from "@/components/global-footer";
 
 export const metadata: Metadata = {
-  title: "VYBBER",
+  title: "VYBS - Private Messaging, Vibe Freely",
   description:
-    "Truth-powered social. Learn, stay informed, discover music, and shop — all in one swipe.",
+    "Message privately. Vibe freely. VYBS is fast, secure messaging built for your circle. End-to-end encrypted, no ads, no clutter.",
 };
 
 export default function RootLayout({

@@ -1,155 +1,141 @@
 import Link from "next/link";
 
-const features = [
+const steps = [
   {
     step: "01",
-    title: "Discover",
-    body:
-      "Explore a feed designed around entertainment, education, news, and commerce instead of endless noise.",
+    title: "Download VYBS",
+    body: "Get VYBS from the Apple App Store or Google Play Store. Available on iOS and Android.",
   },
   {
     step: "02",
-    title: "Truth Scores",
-    body:
-      "See context and credibility indicators that help you navigate information more thoughtfully.",
+    title: "Verify Your Number",
+    body: "Enter your phone number and verify it with the code we send via SMS. That's it.",
   },
   {
     step: "03",
-    title: "Follow Experiences",
-    body:
-      "Connect with creators, educators, businesses, and communities that align with your interests.",
+    title: "Find Your People",
+    body: "Sync your contacts or search for friends by username. Add them and start chatting.",
   },
   {
     step: "04",
-    title: "Shop Intentionally",
-    body:
-      "Discover products and opportunities without manipulative experiences.",
+    title: "Start Vibing",
+    body: "Send messages, photos, voice notes, and files. Create groups for your circles. Vibe on.",
   },
 ];
 
-const principles = [
+const faqs = [
   {
-    title: "Built for People",
-    body: "Human experience comes before engagement metrics.",
+    question: "How do I create a group?",
+    answer:
+      "Tap the pencil icon, select 'New Group', add the people you want, and give it a name. That's it.",
   },
   {
-    title: "Transparent",
-    body: "Context and trust should be visible, not hidden.",
+    question: "How do I send files?",
+    answer:
+      "Tap the attachment icon and choose a file from your phone. You can send documents, photos, videos, and more.",
   },
   {
-    title: "Purposeful",
-    body: "Every interaction should add value to your day.",
+    question: "Is my chat backed up?",
+    answer:
+      "Yes. Your chats are backed up securely. You can restore them if you switch phones or reinstall the app.",
+  },
+  {
+    question: "Can I delete messages?",
+    answer:
+      "Yes. Delete a message anytime. For everyone, or just for you. The choice is yours.",
+  },
+  {
+    question: "How do I mute notifications?",
+    answer:
+      "Open the chat, tap the settings icon, and choose your notification preferences. Vibe at your own pace.",
+  },
+  {
+    question: "What about voice and video calls?",
+    answer:
+      "Voice and video calls are coming soon. We're making sure they're encrypted and rock-solid.",
   },
 ];
 
 export default function DocsPage() {
   return (
-    <main className="min-h-screen bg-black px-6 py-24 text-white">
+    <main className="min-h-screen bg-white px-6 py-24 text-gray-900">
       <div className="mx-auto max-w-7xl">
         {/* Hero */}
         <section className="max-w-4xl">
-          <p className="text-sm uppercase tracking-[0.35em] text-zinc-500">
-            Documentation
+          <p className="text-sm uppercase tracking-widest text-blue-600 font-semibold">
+            How to Use
           </p>
 
           <h1 className="mt-6 text-5xl font-bold tracking-tight md:text-7xl">
-            How VYBBER works.
+            Get started with VYBS
           </h1>
 
-          <p className="mt-8 text-xl leading-relaxed text-zinc-400 md:text-2xl">
-            Everything you need to understand the VYBBER experience.
+          <p className="mt-8 text-xl leading-relaxed text-gray-600 md:text-2xl">
+            Super simple. 4 steps and you're done.
           </p>
         </section>
 
         {/* Steps */}
         <section className="mt-24 grid gap-8 lg:grid-cols-2">
-          {features.map((feature) => (
+          {steps.map((step) => (
             <div
-              key={feature.step}
-              className="
-                rounded-[40px]
-                border border-white/10
-                bg-white/5
-                p-8
-                backdrop-blur-xl
-                shadow-[0_12px_40px_rgba(0,0,0,0.35)]
-                transition-transform duration-300
-                hover:-translate-y-2
-              "
+              key={step.step}
+              className="rounded-2xl border border-blue-200 bg-white/80 p-8 backdrop-blur-sm shadow-md hover:shadow-lg transition"
             >
-              <p className="text-sm tracking-[0.3em] text-zinc-500">
-                {feature.step}
+              <p className="text-sm tracking-widest text-blue-600 font-semibold">
+                {step.step}
               </p>
 
-              <h2 className="mt-4 text-3xl font-semibold">
-                {feature.title}
+              <h2 className="mt-4 text-3xl font-bold">
+                {step.title}
               </h2>
 
-              <p className="mt-6 leading-relaxed text-zinc-400">
-                {feature.body}
+              <p className="mt-6 leading-relaxed text-gray-600">
+                {step.body}
               </p>
             </div>
           ))}
         </section>
 
-        {/* Principles */}
-        <section className="mt-28">
-          <h2 className="text-4xl font-bold md:text-5xl">
-            Design Principles
-          </h2>
+        {/* FAQ */}
+        <section className="mt-32">
+          <div className="max-w-3xl">
+            <h2 className="text-4xl font-bold md:text-5xl">Questions?</h2>
 
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {principles.map((principle) => (
-              <div
-                key={principle.title}
-                className="
-                  rounded-[32px]
-                  border border-white/10
-                  bg-white/5
-                  p-6
-                  backdrop-blur-xl
-                  shadow-[0_10px_30px_rgba(0,0,0,0.3)]
-                  transition-transform duration-300
-                  hover:-translate-y-1
-                "
-              >
-                <h3 className="text-xl font-semibold">
-                  {principle.title}
-                </h3>
+            <div className="mt-12 space-y-6">
+              {faqs.map((faq, index) => (
+                <div
+                  key={index}
+                  className="rounded-2xl border border-blue-200 bg-white/80 p-8 backdrop-blur-sm shadow-md hover:shadow-lg transition"
+                >
+                  <h3 className="text-lg font-bold text-gray-900">
+                    {faq.question}
+                  </h3>
 
-                <p className="mt-4 text-sm leading-relaxed text-zinc-400">
-                  {principle.body}
-                </p>
-              </div>
-            ))}
+                  <p className="mt-4 leading-relaxed text-gray-600">
+                    {faq.answer}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
-        {/* Closing */}
-        <section className="mt-32 max-w-4xl">
-          <h2 className="text-4xl font-bold tracking-tight md:text-6xl">
-            Ready to experience it?
+        {/* CTA */}
+        <section className="mt-32 max-w-4xl rounded-2xl border border-blue-200 bg-blue-50 p-12 backdrop-blur-sm text-center">
+          <h2 className="text-4xl font-bold tracking-tight md:text-5xl">
+            Ready to vibe?
           </h2>
 
-          <p className="mt-8 text-xl leading-relaxed text-zinc-400 md:text-2xl">
-            Join the people helping shape a more useful social experience.
+          <p className="mt-6 text-xl leading-relaxed text-gray-600 md:text-2xl">
+            Join the people building a better way to message.
           </p>
 
           <Link
             href="/#waitlist"
-            className="
-              mt-10 inline-block
-              rounded-full
-              border border-white/10
-              bg-white
-              px-6 py-3
-              text-sm font-semibold
-              text-black
-              transition
-              hover:scale-105
-            "
+            className="mt-8 inline-block rounded-full bg-blue-600 px-8 py-4 text-lg font-semibold text-white transition hover:bg-blue-700"
           >
-            Reserve Your Spot →
+            Join the Waitlist
           </Link>
         </section>
       </div>

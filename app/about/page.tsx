@@ -1,148 +1,92 @@
 import Link from "next/link";
 
-const storyCards = [
-  {
-    title: "Why We Started",
-    body:
-      "The internet gave us connection, creativity, and opportunity. But somewhere along the way, attention became more valuable than people.",
-  },
-  {
-    title: "What We Believe",
-    body:
-      "Technology should amplify curiosity, truth, and human potential—not reward outrage, manipulation, and endless distraction.",
-  },
-  {
-    title: "What We're Building",
-    body:
-      "VYBBER brings entertainment, education, news, and commerce into one intentional experience designed around people.",
-  },
-];
-
-const pillars = [
-  {
-    title: "Entertainment",
-    body: "Joy, creativity, and culture without the emptiness.",
-  },
-  {
-    title: "Education",
-    body: "Learning that is accessible, engaging, and practical.",
-  },
-  {
-    title: "News",
-    body: "Information that values context over sensationalism.",
-  },
-  {
-    title: "Commerce",
-    body: "Discovery and opportunity without exploitation.",
-  },
-];
-
 export default function AboutPage() {
   return (
-    <main className="min-h-screen bg-black px-6 py-24 text-white">
-      <div className="mx-auto max-w-7xl">
-        {/* Hero */}
-        <section className="max-w-4xl">
-          <p className="text-sm uppercase tracking-[0.35em] text-zinc-500">
-            About VYBBER
+    <main className="min-h-screen bg-white px-6 py-24 text-gray-900">
+      <div className="mx-auto max-w-4xl">
+        <Link
+          href="/"
+          className="text-sm text-blue-600 transition hover:text-blue-700 font-medium"
+        >
+          ← Back to Home
+        </Link>
+
+        <div className="mt-16">
+          <p className="text-sm uppercase tracking-widest text-blue-600 font-semibold">
+            About VYBS
           </p>
 
           <h1 className="mt-6 text-5xl font-bold tracking-tight md:text-7xl">
-            We're not building another app.
+            Built for your vibes.
           </h1>
+        </div>
 
-          <p className="mt-8 text-xl leading-relaxed text-zinc-400 md:text-2xl">
-            We're reimagining what social media can become.
+        <div className="mt-16 space-y-8 text-lg leading-relaxed text-gray-700 md:text-xl">
+          <p>
+            We got tired of cluttered messaging apps. Spam, ads, algorithms trying to keep us online longer. Your private chats shouldn't be a product.
           </p>
-        </section>
 
-        {/* Story Cards */}
-        <section className="mt-24 grid gap-8 lg:grid-cols-3">
-          {storyCards.map((card) => (
-            <div
-              key={card.title}
-              className="
-                rounded-[40px]
-                border border-white/10
-                bg-white/5
-                p-8
-                backdrop-blur-xl
-                shadow-[0_12px_40px_rgba(0,0,0,0.35)]
-                transition-transform duration-300
-                hover:-translate-y-2
-              "
-            >
-              <h2 className="text-2xl font-semibold">
-                {card.title}
-              </h2>
+          <p>
+            VYBS was built so you can just message your people, share your moments, and vibe without noise. Fast. Private. Yours. No tracking, no selling your data, no algorithm deciding who matters. Just real connections.
+          </p>
 
-              <p className="mt-6 leading-relaxed text-zinc-400">
-                {card.body}
-              </p>
-            </div>
-          ))}
-        </section>
+          <p>
+            Every feature is designed around one principle: get out of your way. Send a message. Create a group. Vibe. That's it.
+          </p>
 
-        {/* Pillars */}
-        <section className="mt-28">
-          <h2 className="text-4xl font-bold md:text-5xl">
-            The Four Pillars
-          </h2>
+          <p>
+            We believe messaging should be simple, private, and actually work. That's VYBS.
+          </p>
+        </div>
 
-          <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-            {pillars.map((pillar) => (
+        {/* Team Section */}
+        <div className="mt-24 rounded-2xl border border-blue-200 bg-blue-50 p-12 backdrop-blur-sm">
+          <h2 className="text-3xl font-bold text-gray-900">Our Team</h2>
+          <p className="mt-4 text-gray-600 leading-relaxed">
+            Founded in 2026 in Nigeria by a small team tired of overcomplicating things. We're building VYBS because we believe technology should serve people, not the other way around.
+          </p>
+          <p className="mt-4 text-gray-600 leading-relaxed">
+            We're just getting started, and we'd love for you to help shape what comes next.
+          </p>
+        </div>
+
+        {/* Values */}
+        <div className="mt-24">
+          <h2 className="text-3xl font-bold text-gray-900">What We Value</h2>
+
+          <div className="mt-12 grid gap-6 md:grid-cols-2">
+            {[
+              {
+                title: "Privacy First",
+                desc: "Your data is yours. We don't have backdoors.",
+              },
+              {
+                title: "Speed",
+                desc: "Messages should arrive instantly. Always.",
+              },
+              {
+                title: "Simplicity",
+                desc: "No clutter. No confusion. Just messaging.",
+              },
+              {
+                title: "Reliability",
+                desc: "Works on WiFi or 2G. We've got you.",
+              },
+            ].map((value, index) => (
               <div
-                key={pillar.title}
-                className="
-                  rounded-[32px]
-                  border border-white/10
-                  bg-white/5
-                  p-6
-                  backdrop-blur-xl
-                  shadow-[0_10px_30px_rgba(0,0,0,0.3)]
-                  transition-transform duration-300
-                  hover:-translate-y-1
-                "
+                key={index}
+                className="rounded-2xl border border-blue-200 bg-white/80 p-8 backdrop-blur-sm shadow-md hover:shadow-lg transition"
               >
-                <h3 className="text-xl font-semibold">
-                  {pillar.title}
+                <h3 className="text-xl font-bold text-gray-900">
+                  {value.title}
                 </h3>
-
-                <p className="mt-4 text-sm leading-relaxed text-zinc-400">
-                  {pillar.body}
+                <p className="mt-3 text-gray-600">
+                  {value.desc}
                 </p>
               </div>
             ))}
           </div>
-        </section>
-
-        {/* Closing */}
-        <section className="mt-32 max-w-4xl">
-          <h2 className="text-4xl font-bold tracking-tight md:text-6xl">
-            VYBBER isn't finished.
-          </h2>
-
-          <p className="mt-8 text-xl leading-relaxed text-zinc-400 md:text-2xl">
-            It's just getting started. We'd love for you to help shape what comes next.
-          </p>
-
-          <Link
-            href="/#waitlist"
-            className="
-              mt-10 inline-block
-              rounded-full
-              border border-white/10
-              bg-white
-              px-6 py-3
-              text-sm font-semibold
-              text-black
-              transition
-              hover:scale-105
-            "
-          >
-            Reserve Your Spot →
-          </Link>
-        </section>
+        </div>
       </div>
     </main>
   );
